@@ -48,7 +48,6 @@
 
 #include <boost/algorithm/string.hpp>
 #include <boost/thread/thread.hpp>
-#include <vector>
 #include "IMU_GPS.h"
 
 #include <gtsam/slam/BetweenFactor.h>
