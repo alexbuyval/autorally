@@ -4,8 +4,8 @@
 
 
   <node name="gps_imu" pkg="autorally_core" type="imuGpsEstimator" output="screen" machine="autorally-master">
-      <remap from="/gps_imu/gps" to="/gpsRoverStatus"/>
-      <remap from="/gps_imu/imu" to="/imu/imu"/>
+      <remap from="/gps_imu/gps" to="/autorally_platform/gpsRoverStatus"/>
+      <remap from="/gps_imu/imu" to="/autorally_platform/imu"/>
       <remap from="/gps_imu/pose" to="/pose_estimate"/>
       <remap from="/gps_imu/filter" to="/imu/filter"/>
       <remap from="/gps_imu/bias_acc" to="/bias_acc"/>
@@ -24,9 +24,9 @@
       <param name="SensorTransformY" value="-0.0246"/>
       <param name="SensorTransformZ" value="-0.020"/>-->
       <param name="SensorXAngle" value="0"/>
-      <param name="SensorYAngle" value="3.14159265359"/>
-      <param name="SensorZAngle" value="1.57079632679"/>
-      <param name="CarXAngle" value="3.14159265359"/>
+      <param name="SensorYAngle" value="0"/> <!--3.14159265359-->
+      <param name="SensorZAngle" value="0"/> <!--1.57079632679-->
+      <param name="CarXAngle" value="0"/>  <!--3.14159265359-->
       <param name="CarYAngle" value="0"/>
       <param name="CarZAngle" value="0"/>
       <param name="GpsSkip" value="1"/>
@@ -42,11 +42,8 @@
       <param name="intialPitch" value="0"/>
       <param name="initialYaw" value="0"/>
       <param name="InvertX" value="false"/>
-      <param name="InvertY" value="true"/>
-      <param name="InvertZ" value="true"/>
-      <param name="GPSX" value="-0.37"/>
-      <param name="GPSY" value="0"/>
-      <param name="GPSZ" value="-0.06"/>
+      <param name="InvertY" value="false"/>
+      <param name="InvertZ" value="false"/>
       
       
   </node>
