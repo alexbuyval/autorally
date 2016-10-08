@@ -616,6 +616,18 @@ limitations under the License.
                     wheel_mass="${rear_wheel_mass}"
                     axle_eff_limit="${rear_axle_eff_limit}"/>
 
+  <property name="M_PI" value="3.14159"/>
+ 
+  <xacro:include filename="$(find autorally_description)/urdf/sick_lms1xx_mount.urdf.xacro"/>
+
+        <sick_lms1xx_mount prefix="base" topic="scan"/>
+
+      <joint name="laser_mount_joint" type="fixed">
+        <origin xyz="0.0 0 0.2" rpy="0 0 0"/>
+        <parent link="base_link" />
+        <child link="base_laser_mount" />
+      </joint>
+      
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       <robotNamespace>/autorally_platform</robotNamespace>
