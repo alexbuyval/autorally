@@ -623,7 +623,7 @@ limitations under the License.
         <sick_lms1xx_mount prefix="base" topic="scan"/>
 
       <joint name="laser_mount_joint" type="fixed">
-        <origin xyz="0.0 0 0.2" rpy="0 0 0"/>
+        <origin xyz="0.0 0 0.22" rpy="0 0 0"/>
         <parent link="base_link" />
         <child link="base_laser_mount" />
       </joint>
@@ -669,6 +669,15 @@ limitations under the License.
       <gaussianNoise>0.0001 0.0001 0.0001</gaussianNoise>
       <velocityDrift>0 0 0</velocityDrift>
       <velocityGaussianNoise>0.005 0.005 0.05</velocityGaussianNoise>
+    </plugin>
+    
+    <plugin name="robot_groundtruth_sim" filename="libgazebo_ros_p3d.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>100.0</updateRate>
+        <bodyName>base_link</bodyName>
+        <topicName>ground_truth/state</topicName>
+        <gaussianNoise>0.0</gaussianNoise>
+        <frameName>map</frameName>
     </plugin>
     <!-- <plugin name="tire_friction" filename="libTireFrictionPlugin.so">
       <link_name>left_rear_wheel</link_name>

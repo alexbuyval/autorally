@@ -49,7 +49,7 @@ limitations under the License.
   <arg name="z" default="0.3"/>
   <arg name="roll" default="0.0"/>
   <arg name="pitch" default="0.0"/>
-  <arg name="yaw" default="0.0"/> <!-- 0.785398 -->
+  <arg name="yaw" default="0"/> <!-- 0.785398 -->
 
   <include file="$(find autorally_description)/launch/autoRallyPlatform.launch">
     <arg name="namespace" value="$(arg namespace)"/>

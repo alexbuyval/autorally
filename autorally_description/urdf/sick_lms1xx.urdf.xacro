@@ -27,7 +27,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:macro name="sick_lms1xx" params="frame:=laser topic:=scan sample_size:=720 update_rate:=50" >
+  <xacro:macro name="sick_lms1xx" params="frame:=laser topic:=scan sample_size:=70 update_rate:=10" >
     <link name="${frame}">
       <inertial>
         <mass value="1.1" />
@@ -60,9 +60,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           <scan>
             <horizontal>
               <samples>${sample_size}</samples>
-              <resolution>1</resolution>
-              <min_angle>-2.35619</min_angle>
-              <max_angle>2.35619</max_angle>
+	      <resolution>1</resolution> <!-- 1 -->
+              <min_angle>-1.57</min_angle>  <!-- -2.35619 -->
+              <max_angle>1.57</max_angle>  <!-- 2.35619 -->
             </horizontal>
           </scan>
           <range>
